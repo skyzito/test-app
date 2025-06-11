@@ -1,30 +1,19 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import TopBar from "./components/react/TopBar.tsx";
+import HomePage from "./components/react/HomePage.tsx";
+import InternalPage from "./components/react/InternalPage.tsx";
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
-		<div className="App">
-			<div>
-				<a href="https://reactjs.org" target="_blank" rel="noreferrer">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
+		<Router>
+			<TopBar />
+			<div className="main-content">
+				<Routes>
+					<Route path="/" element={<HomePage />} />
+					<Route path="/internal" element={<InternalPage />} />
+				</Routes>
 			</div>
-			<h1>Rspack + React + TypeScript</h1>
-			<div className="card">
-				<button type="button" onClick={() => setCount(count => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Rspack and React logos to learn more
-			</p>
-		</div>
+		</Router>
 	);
 }
 

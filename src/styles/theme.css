@@ -1,0 +1,47 @@
+:root {
+  /* Primary Colors */
+  --color-primary: #646cff;
+  --color-primary-dark: #535bf2;
+  --color-primary-light: #747bff;
+  --color-accent: #61dafb;
+
+  /* Grayscale */
+  --color-bg-dark: #242424;
+  --color-bg-darker: #1a1a1a;
+  --color-bg-light: #ffffff;
+  --color-bg-lighter: #f9f9f9;
+  --color-bg-topbar: #222;
+  --color-bg-topbar-divider: #333;
+  --color-bg-topbar-hover: #23272f;
+  --color-bg-table-header: #181b20;
+  --color-bg-table-row-even: #262a32;
+  --color-bg-table-row-hover: #31363f;
+  --color-bg-table-shadow: rgba(0,0,0,0.12);
+  --color-bg-table-shadow-light: rgba(0,0,0,0.08);
+  --color-bg-table-shadow-accent: rgba(97,218,251,0.08);
+  --color-bg-table-shadow-accent-strong: rgba(97,218,251,0.10);
+
+  /* Borders */
+  --color-border: #2c313a;
+  --color-border-accent: #61dafb;
+  --color-border-transparent: transparent;
+
+  /* Text */
+  --color-text-main: #fff;
+  --color-text-dark: #213547;
+  --color-text-light: #e0e0e0;
+  --color-text-accent: #61dafb;
+  --color-text-muted: #aaa;
+  --color-text-secondary: #b0b8c1;
+  --color-text-topbar: #222;
+
+  /* Focus */
+  --color-focus: #61dafb;
+
+  /* Spacing and Radius */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+} 

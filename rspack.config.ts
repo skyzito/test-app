@@ -1,6 +1,7 @@
+// @ts-nocheck 
 import { defineConfig } from '@rspack/cli';
 import { rspack } from '@rspack/core';
-import RefreshPlugin from '@rspack/plugin-react-refresh';
+import { ReactRefreshRspackPlugin } from '@rspack/plugin-react-refresh';
 import { withZephyr } from 'zephyr-webpack-plugin';
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -21,6 +22,22 @@ export default withZephyr()({
       {
         test: /\.svg$/,
         type: 'asset',
+      },
+      {
+        test: /UserTable\.tsx$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                '@babel/preset-typescript'
+              ],
+              plugins: [
+                '@vue/babel-plugin-jsx'
+              ]
+            }
+          }
+        ]
       },
       {
         test: /\.(jsx?|tsx?)$/,
@@ -45,15 +62,15 @@ export default withZephyr()({
             },
           },
         ],
+        exclude: /UserTable\.tsx$/,
       },
     ],
   },
-  // @ts-expect-error Below are non-blocking error and we are working on improving them
   plugins: [
     new rspack.HtmlRspackPlugin({
       template: './index.html',
     }),
-    isDev ? new RefreshPlugin() : null,
+    isDev ? new ReactRefreshRspackPlugin() : null,
   ].filter(Boolean),
   optimization: {
     minimizer: [
